@@ -37,6 +37,7 @@ const Testimonials = () => {
                                 value={review.rating}
                                 readOnly
                             />
+
                             <p className="px-8">{review.details}</p>
                             <h3 className="text-2xl text-[#CD9003]">{review.name}</h3>
                         </div>
