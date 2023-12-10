@@ -5,8 +5,8 @@ import './Featured.css'
 const Featured = () => {
     return (
         <div className="featured-item bg-fixed text-[#FFF] pt-8 my-20">
-            <SectionTitle heading="Check it out"
-                subHeading="Featured Item"></SectionTitle>
+            <SectionTitle heading="Featured Item"
+                subHeading="Check it out"></SectionTitle>
             <div className="md:flex justify-center items-center bg-opacity-80 px-36 py-20 pt-12">
                 <div>
                     <img src={featuredImg} alt="" />
