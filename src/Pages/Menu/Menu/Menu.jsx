@@ -32,20 +32,20 @@ const Menu = () => {
             {/*Desserts menu items*/}
             <MenuCategory
                 items={desserts}
-                title="Desserts "
+                title="desserts "
                 subTitle="Desserts are the sweetest finale to any meal, a symphony of flavors from comforting classics to avant-garde creations. Life's too short—indulge in the delicious finale!"
                 img={dessertImg}></MenuCategory>
             {/*Pizza menu items*/}
             <MenuCategory
                 items={pizza}
-                title="Pizza"
+                title="pizza"
                 subTitle="
                 Pizza, the iconic comfort food. Crispy crust, melty cheese, endless toppings—each bite is a flavor celebration. Classic or creative, pizza is pure happiness on a plate!"
                 img={pizzaImg}></MenuCategory>
             {/*Salad menu items*/}
             <MenuCategory
                 items={salad}
-                title="Salad"
+                title="salad"
                 subTitle="
                
 Salads: a colorful medley of crisp freshness, from classic Caesar to trendy kale blends. Each bite is a celebration of flavor and well-being. Eat your greens, feel the goodness!"
@@ -53,7 +53,7 @@ Salads: a colorful medley of crisp freshness, from classic Caesar to trendy kale
             {/*Soup menu items*/}
             <MenuCategory
                 items={soup}
-                title="Soup"
+                title="soup"
                 subTitle="
                
 
