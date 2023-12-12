@@ -8,8 +8,8 @@ const NavBar = () => {
         <li><Link>CONTACT US</Link></li>
         <li><Link>DASHBOARD</Link></li>
         <li><Link to="/menu">OUR MENU</Link></li>
-        <li><Link to="/order">ORDER FOOD</Link></li>
-        <li><Link>SIGN OUT</Link></li>
+        <li><Link to="/order/salad">ORDER FOOD</Link></li>
+        <li><Link to="/login" >Login</Link></li>
     </>
     return (
         <>
