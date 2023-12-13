@@ -15,6 +15,7 @@ const NavBar = () => {
             })
             .catch(error => {
                 console.log(error)
+
             })
 
 
