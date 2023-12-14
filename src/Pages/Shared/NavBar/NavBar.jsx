@@ -31,7 +31,7 @@ const NavBar = () => {
             <Link>
                 <button className="btn btn-active btn-ghost">
                     <MdShoppingCart />
-                    <div className="badge badge-secondary">+0</div>
+                    <div className="badge ">+0</div>
                 </button>
             </Link>
         </li>
