@@ -24,35 +24,41 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        //const email = form.email.value;
-        console.log(email, password);
+
         signIn(email, password)
             .then((result) => {
-
-                const user = result.user;
-                console.log(user);
-                Swal.fire({
-                    title: "User login successful",
-                    showClass: {
-                        popup: `
-                        animate__animated
-                        animate__fadeInUp
-                        animate__faster
-                      `
-                    },
-                    hideClass: {
-                        popup: `
-                        animate__animated
-                        animate__fadeOutDown
-                        animate__faster
-                      `
-                    }
-                });
-                navigate(from, { replace: true });
-
+                if (result && result.user) {
+                    const user = result.user;
+                    console.log(user);
+                    Swal.fire({
+                        title: "User login successful",
+                        showClass: {
+                            popup: `
+                            animate__animated
+                            animate__fadeInUp
+                            animate__faster
+                          `
+                        },
+                        hideClass: {
+                            popup: `
+                            animate__animated
+                            animate__fadeOutDown
+                            animate__faster
+                          `
+                        }
+                    });
+                    navigate(from, { replace: true });
+                } else {
+                    // Handle the case where result or result.user is undefined
+                    console.error("Login failed. User not found.");
+                }
             })
-
+            .catch(error => {
+                // Handle any potential error during sign-in
+                console.error("Login error:", error);
+            });
     }
+
 
     const handleValidateCaptcha = (e) => {
         const user_captcha_value = e.target.value;
