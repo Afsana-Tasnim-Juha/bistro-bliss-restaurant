@@ -1,6 +1,6 @@
 import { MdShoppingCart } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
-import { IoHome } from "react-icons/io5";
+import { IoHome, IoMenu } from "react-icons/io5";
 import { MdOutlineDateRange } from "react-icons/md";
 import { MdOutlinePayment } from "react-icons/md";
 import { MdOutlineRateReview } from "react-icons/md";
@@ -50,12 +50,25 @@ const Dashboard = () => {
                             <TbBrandBooking />
                             My Bookings</NavLink>
                     </li>
+                    <div className="divider"></div>
+                    <li>
+
+                        <NavLink to="/">
+                            <IoHome />
+                            User Home</NavLink>
+                    </li>
+                    <li>
+
+                        <NavLink to="/order/menu">
+                            <IoMenu />
+                            Menu</NavLink>
+                    </li>
                 </ul>
             </div>
             {/**
              * dashboard content
              */}
-            <div className="flex-1">
+            <div className="flex-1 p-10">
                 <Outlet></Outlet>
             </div>
         </div>
