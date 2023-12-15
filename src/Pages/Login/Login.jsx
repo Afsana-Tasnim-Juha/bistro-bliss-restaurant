@@ -4,6 +4,8 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import authentication from "../../assets/others/authentication.png"
+import authentication2 from "../../assets/others/authentication2.png"
 
 const Login = () => {
 
@@ -79,13 +81,15 @@ const Login = () => {
 
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row-reverse">
+                <img src={authentication} alt="" />
+                <div className="hero-content flex-col lg:flex-row">
                     <div className="text-center md:w-1/2 lg:text-left">
-                        <h1 className="text-5xl font-bold">Login now!</h1>
-                        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+
+                        <img src={authentication2} alt="" />
                     </div>
                     <div className="card md:w-1/2  max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleLogin} className="card-body">
+                            <h1 className="text-2xl font-bold text-center">Login</h1>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Email</span>
@@ -111,10 +115,10 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-6">
 
-                                <input disabled={disable} className="btn btn-primary" type="submit" value="Login" />
+                                <input disabled={disable} className="btn btn-primary text-white bg-[bg-[#D1A054B2]]" type="submit" value="Login" />
                             </div>
                         </form>
-                        <p><small>New Here? <Link to="/signUp">Create an account here</Link></small></p>
+                        <p className="pl-2 pb-2"><small>New Here? <Link to="/signUp"><span className='text-[#D1A054B2] font-bold' >Create an account here</span></Link></small></p>
                     </div>
                 </div>
             </div>

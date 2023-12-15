@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import authentication from "../../assets/others/authentication.png"
+import authentication2 from "../../assets/others/authentication2.png"
 
 
 
@@ -56,12 +58,14 @@ const SignUp = () => {
 
             </Helmet>
             <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row-reverse">
+                <img src={authentication} alt="" />
+                <div className="hero-content flex-col lg:flex-row">
                     <div className="text-center lg:text-left">
-                        <h1 className="text-5xl font-bold">Sign Up now!</h1>
 
+                        <img src={authentication2} alt="" />
                     </div>
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                        <h1 className="text-2xl font-bold text-center mt-6">Sign Up now!</h1>
                         <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -106,10 +110,10 @@ const SignUp = () => {
                                 </label>
                             </div>
                             <div className="form-control mt-6">
-                                <input className="btn btn-primary" type="submit" value="Sign Up" />
+                                <input className="btn btn-primary bg-[#D1A054B2] text-white" type="submit" value="Sign Up" />
                             </div>
                         </form>
-                        <p><small>Already Have An Account? <Link to="/login">Login here</Link></small></p>
+                        <p className="pl-2 pb-2"><small>Already Have An Account? <Link to="/login"><span className="text-[#D1A054B2] font-bold">Login here</span></Link></small></p>
                     </div>
                 </div>
             </div>
