@@ -11,6 +11,7 @@ import SignUp from "../Pages/SignUp/SignUp";
 
 import Cart from "../Pages/Dashboard/Cart/Cart";
 import Dashboard from "../Layout/DashBoard";
+import PrivateRoute from './PrivateRoute';
 
 
 export const router = createBrowserRouter([
@@ -42,7 +43,7 @@ export const router = createBrowserRouter([
     },
     {
         path: "/dashboard",
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute> <Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
                 path: "cart",
