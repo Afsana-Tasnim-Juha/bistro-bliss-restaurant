@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
 import authentication from "../../assets/others/authentication.png"
 import authentication2 from "../../assets/others/authentication2.png"
+import SocialLogin from '../../Components/SocialLogin/SocialLogin';
 
 const Login = () => {
 
@@ -119,8 +120,11 @@ const Login = () => {
                             </div>
                         </form>
                         <p className="pl-2 pb-2"><small>New Here? <Link to="/signUp"><span className='text-[#D1A054B2] font-bold' >Create an account here</span></Link></small></p>
+                        <SocialLogin></SocialLogin>
                     </div>
+
                 </div>
+
             </div>
         </>
     );
