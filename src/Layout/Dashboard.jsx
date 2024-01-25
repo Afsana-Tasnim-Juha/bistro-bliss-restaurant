@@ -6,10 +6,14 @@ import { MdOutlinePayment } from "react-icons/md";
 import { MdOutlineRateReview } from "react-icons/md";
 import { TbBrandBooking } from "react-icons/tb";
 import { BiSolidContact } from "react-icons/bi";
-import useCarts from "../hooks/useCarts";
+import { FaUtensils } from "react-icons/fa6";
+import { MdFormatListBulleted } from "react-icons/md";
+import { FaUsers } from "react-icons/fa";
+import { FaBook } from "react-icons/fa";
+//import useCarts from "../hooks/useCarts";
 
 const Dashboard = () => {
-    const [cart] = useCarts();
+    //const [cart] = useCarts();
     //TODO: get isAdmin value  from the database 
     const isAdmin = true;
 
@@ -18,42 +22,81 @@ const Dashboard = () => {
             {/* deshboard side bar */}
             <div className="w-64 min-h-screen bg-[#D1A054B2]">
                 <ul className="menu p-4">
-                    <li>
+                    {
+                        isAdmin ?
+                            <>
+                                <li>
 
-                        <NavLink to="/dashboard/userHome">
-                            <IoHome />
-                            User Home</NavLink>
-                    </li>
-                    <li>
+                                    <NavLink to="/dashboard/adminHome">
+                                        <IoHome />
+                                        Admin Home</NavLink>
+                                </li>
+                                <li>
 
-                        <NavLink to="/dashboard/reservation">
-                            <MdOutlineDateRange />
-                            Reservation</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/dashboard/payment">
-                            <MdOutlinePayment />
-                            Payment History</NavLink>
-                    </li>
+                                    <NavLink to="/dashboard/addItems">
+                                        <FaUtensils />
+                                        Add Items</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/dashboard/manageItems">
+                                        <MdFormatListBulleted />
+                                        Manage Items</NavLink>
+                                </li>
 
-                    <li>
+                                <li>
 
-                        <NavLink to="/dashboard/cart">
-                            <MdShoppingCart></MdShoppingCart>
-                            My Cart</NavLink>
-                    </li>
-                    <li>
+                                    <NavLink to="/dashboard/bookings">
+                                        <FaBook></FaBook>
+                                        Manage Bookings</NavLink>
+                                </li>
+                                <li>
 
-                        <NavLink to="/dashboard/review">
-                            <MdOutlineRateReview />
-                            Add Review</NavLink>
-                    </li>
-                    <li>
+                                    <NavLink to="/dashboard/users">
+                                        <FaUsers />
+                                        All Users</NavLink>
+                                </li>
 
-                        <NavLink to="/dashboard/bookings">
-                            <TbBrandBooking />
-                            My Bookings</NavLink>
-                    </li>
+                            </>
+                            :
+                            <>
+                                <li>
+
+                                    <NavLink to="/dashboard/userHome">
+                                        <IoHome />
+                                        User Home</NavLink>
+                                </li>
+                                <li>
+
+                                    <NavLink to="/dashboard/reservation">
+                                        <MdOutlineDateRange />
+                                        Reservation</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/dashboard/payment">
+                                        <MdOutlinePayment />
+                                        Payment History</NavLink>
+                                </li>
+
+                                <li>
+
+                                    <NavLink to="/dashboard/cart">
+                                        <MdShoppingCart></MdShoppingCart>
+                                        My Cart</NavLink>
+                                </li>
+                                <li>
+
+                                    <NavLink to="/dashboard/review">
+                                        <MdOutlineRateReview />
+                                        Add Review</NavLink>
+                                </li>
+                                <li>
+
+                                    <NavLink to="/dashboard/bookings">
+                                        <TbBrandBooking />
+                                        My Bookings</NavLink>
+                                </li>
+                            </>
+                    }
                     <div className="divider"></div>
                     {/* Shared Nav links */}
                     <li>
