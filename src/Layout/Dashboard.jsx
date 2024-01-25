@@ -5,13 +5,17 @@ import { MdOutlineDateRange } from "react-icons/md";
 import { MdOutlinePayment } from "react-icons/md";
 import { MdOutlineRateReview } from "react-icons/md";
 import { TbBrandBooking } from "react-icons/tb";
+import { BiSolidContact } from "react-icons/bi";
+import useCarts from "../hooks/useCarts";
 
 const Dashboard = () => {
+    const [cart] = useCarts();
+    //TODO: get isAdmin value  from the database 
+    const isAdmin = true;
+
     return (
         <div className="flex">
-            {/**
-             * Deshboard side bar
-             */}
+            {/* deshboard side bar */}
             <div className="w-64 min-h-screen bg-[#D1A054B2]">
                 <ul className="menu p-4">
                     <li>
@@ -51,6 +55,7 @@ const Dashboard = () => {
                             My Bookings</NavLink>
                     </li>
                     <div className="divider"></div>
+                    {/* Shared Nav links */}
                     <li>
 
                         <NavLink to="/">
@@ -62,6 +67,12 @@ const Dashboard = () => {
                         <NavLink to="/order/menu">
                             <IoMenu />
                             Menu</NavLink>
+                    </li>
+                    <li>
+
+                        <NavLink to="/order/menu">
+                            <BiSolidContact />
+                            Contact</NavLink>
                     </li>
                 </ul>
             </div>

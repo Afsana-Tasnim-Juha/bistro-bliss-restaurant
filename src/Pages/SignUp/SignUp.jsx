@@ -9,6 +9,7 @@ import authentication2 from "../../assets/others/authentication2.png"
 
 
 import useAxiosPublic from "./../../hooks/useAxiosPublic";
+import SocialLogin from "../../Components/SocialLogin/SocialLogin";
 
 
 
@@ -131,6 +132,7 @@ const SignUp = () => {
                             </div>
                         </form>
                         <p className="pl-2 pb-2"><small>Already Have An Account? <Link to="/login"><span className="text-[#D1A054B2] font-bold">Login here</span></Link></small></p>
+                        <SocialLogin></SocialLogin>
                     </div>
                 </div>
             </div>
