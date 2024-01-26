@@ -1,5 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from './../../../hooks/useAxiosSecure';
+import { MdDelete } from "react-icons/md";
+import { FaUsers } from 'react-icons/fa';
 
 
 const AllUsers = () => {
@@ -11,6 +13,9 @@ const AllUsers = () => {
             return res.data;
         },
     })
+    const handleDeleteUser = user => {
+
+    }
 
     return (
         <div>
@@ -20,23 +25,39 @@ const AllUsers = () => {
 
             </div>
             <div className="overflow-x-auto">
-                <table className="table table-zebra">
+                <table className="table table-zebra w-full">
                     {/* head */}
                     <thead>
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
-                            users.map(user => <tr key={user._id}>
-                                <th>1</th>
-                                <td>Cy Ganderton</td>
-                                <td>Quality Control Specialist</td>
-                                <td>Blue</td>
+                            users.map((user, index) => <tr key={user._id}>
+                                <th>{index + 1}</th>
+                                <td>{user.name}</td>
+                                <td>{user.email}</td>
+                                <td>
+                                    <button
+                                        onClick={() => { handleDeleteUser(user) }}
+
+                                        className="btn  btn-lg bg-[#BB8506]">
+                                        <FaUsers className="text-white text-2xl" />
+                                    </button>
+                                </td>
+                                <td>
+                                    <button
+                                        onClick={() => { handleDeleteUser(user) }}
+
+                                        className="btn  btn-lg bg-[#BB8506]">
+                                        <MdDelete className="text-white text-2xl" />
+                                    </button>
+                                </td>
                             </tr>)
                         }
 
