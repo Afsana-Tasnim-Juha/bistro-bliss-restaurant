@@ -5,6 +5,18 @@ export const axiosSecure = axios.create({
 })
 const useAxiosSecure = () => {
 
+    // request interceptor to add authorization header for every secure call to the api
+    axiosSecure.interceptors.request.use(function (config) {
+        // Do something before request is sent
+        const token = localStorage.getItem('access-token')
+        console.log('request stopped by interceptors', token)
+        config.headers.authorization = `Bearer ${token}`;
+        return config;
+    }, function (error) {
+        // Do something with request error
+        return Promise.reject(error);
+    });
+
     return axiosSecure;
 };
 
