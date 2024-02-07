@@ -10,12 +10,13 @@ import { FaUtensils } from "react-icons/fa6";
 import { MdFormatListBulleted } from "react-icons/md";
 import { FaUsers } from "react-icons/fa";
 import { FaBook } from "react-icons/fa";
+import useAdmin from "../hooks/useAdmin";
 //import useCarts from "../hooks/useCarts";
 
 const Dashboard = () => {
     //const [cart] = useCarts();
     //TODO: get isAdmin value  from the database 
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
 
     return (
         <div className="flex">
